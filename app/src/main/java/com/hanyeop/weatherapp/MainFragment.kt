@@ -26,11 +26,14 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         // 뷰바인딩
         _binding = FragmentMainBinding.bind(view)
 
-        viewModel.getWeather("JSON",10,1,
-        20210621,1100,"55","127")
+        viewModel.getWeather("JSON",14,1,
+        20210621,1100,"63","89")
 
         viewModel.weatherResponse.observe(viewLifecycleOwner){
-            Log.d(TAG, "${it.body()}")
+            for(i in it.body()?.response!!.body.items.item){
+                if(i.category == "T3H") binding!!.temText.text = i.fcstValue.toString()
+                Log.d(TAG, "$i")
+            }
         }
     }
 
