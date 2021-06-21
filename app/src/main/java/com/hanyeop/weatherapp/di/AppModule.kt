@@ -1,6 +1,5 @@
 package com.hanyeop.weatherapp.di
 
-import com.google.gson.GsonBuilder
 import com.hanyeop.weatherapp.api.WeatherApi
 import com.hanyeop.weatherapp.util.Constants.Companion.BASE_URL
 import dagger.Module
